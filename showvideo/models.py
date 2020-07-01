@@ -8,7 +8,7 @@ class Video(models.Model):       # A 1      B   2     C  3
         verbose_name_plural = "много видео"
 
     slug = models.SlugField(
-        unique=True,
+        unique=False,
         verbose_name="Слаг",
         help_text="слаг должен быть уникальным"
     )

@@ -11,9 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hi^@7rm9@eqmc+3vavf!eilox%3vpen0(sq04jrf0+d624q#we'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['34.72.154.141']
+ALLOWED_HOSTS = ['34.72.154.141', "ololosha.xyz", "localhost"]
 
 
 # Application definition
@@ -114,6 +114,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "./static/"
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': (

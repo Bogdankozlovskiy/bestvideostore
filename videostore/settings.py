@@ -3,20 +3,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'hi^@7rm9@eqmc+3vavf!eilox%3vpen0(sq04jrf0+d624q#we'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ['34.72.154.141', "ololosha.xyz", "localhost"]
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'rest_framework',

@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'hi^@7rm9@eqmc+3vavf!eilox%3vpen0(sq04jrf0+d624q#we'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['34.72.154.141', "ololosha.xyz", "localhost"]
 
@@ -67,7 +67,12 @@ DATABASES = {
         "PORT": 5432
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -114,3 +119,40 @@ STATIC_ROOT = "./static/"
 #         'rest_framework.authentication.SessionAuthentication'
 #     ),
 # }
+
+# Debug
+# Info
+# Warming
+# Error
+# Critical
+
+LOGGING = {
+    "version":1,
+    'formatters':{
+            'verbose':{
+                'format':'{asctime} {levelname} [{name}:{process}:{message}]',
+                'style':'{',
+                'datefmt':'%Y/%m/%d %H:%M:%S',
+                },
+            },
+    'handlers': {
+        'file_w':{
+            'class': 'logging.FileHandler',
+            'filename':'DJlogs_w.log',
+            'level':'WARNING',
+            'formatter':'verbose',
+        },
+        'file_i':{
+            'class': 'logging.FileHandler',
+            'filename':'DJlogs_i.log',
+            'level':'INFO',
+            'formatter':'verbose',
+        },
+    },
+    "loggers":{
+        "django":{
+            "handlers":["file_w", "file_i"],
+            "level":"INFO",
+        }
+    }
+}

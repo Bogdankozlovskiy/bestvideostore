@@ -9,6 +9,10 @@ from rest_framework.generics import (
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication, SessionAuthentication
 from json import dumps
+from logging import getLogger
+
+
+logger = getLogger("django")
 
 
 class UpdateDestroyVideo(RetrieveUpdateDestroyAPIView):
@@ -65,6 +69,7 @@ def add_like(request, id):
 def ajax_like(request):
     id = request.GET["id"]
     video = Video.objects.get(id=id)
+    logger.critical("KeyError in ajax_like")
     video.likes += 1
     video.save()
     return HttpResponse(video.likes)
